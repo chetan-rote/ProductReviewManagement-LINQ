@@ -51,7 +51,7 @@ namespace ProductReviewManagement
             }
         }
         /// <summary>
-        /// Get only product id and reviews from the list
+        /// UC5 Get only product id and reviews from the list
         /// </summary>
         /// <param name="listProductReview"></param>
         public void GetProductIdAndReview(List<ProductReview> listProductReview)
@@ -60,7 +60,21 @@ namespace ProductReviewManagement
 
             foreach (var list in recordedData)
             {
-                Console.WriteLine(list.ProductID + "-->" + list.Review);
+                Console.WriteLine(list.ProductID + ": " + list.Review);
+            }
+        }
+        /// <summary>
+        /// UC6 Skips the top five records.
+        /// </summary>
+        /// <param name="listProductReview">The list product review.</param>
+        public void SkipTopFiveRecords(List<ProductReview> listProductReview)
+        {
+            var recordedData = (from productReview in listProductReview orderby productReview.Rating descending 
+                                select productReview).Skip(5);
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductId: " + list.ProductID + " UserId: " + list.UserID + " Rating: " + list.Rating +
+                    " Review: " + list.Review + " IsLike: " + list.isLike);
             }
         }
     }
