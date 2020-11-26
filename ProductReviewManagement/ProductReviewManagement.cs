@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using System.Data;
 
 namespace ProductReviewManagement
 {
     class ProductReviewManagement
     {
-        /// <summary>
-        /// UC8 The data table
-        /// </summary>
-        public readonly DataTable dataTable = new DataTable();
         /// <summary>
         /// Top rated 3 products are selected from list.
         /// </summary>
@@ -81,34 +76,6 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId: " + list.ProductID + " UserId: " + list.UserID + " Rating: " + list.Rating +
                     " Review: " + list.Review + " IsLike: " + list.isLike);
             }
-        }
-        /// <summary>
-        /// UC8 Insert values in data table from list.
-        /// </summary>
-        /// <param name="listProductReview"></param>
-        public void InsertValuesInDataTable(List<ProductReview> listProductReview)
-        {
-            dataTable.Columns.Add("ProductID", typeof(int));
-            dataTable.Columns.Add("UserID", typeof(int));
-            dataTable.Columns.Add("Rating", typeof(double));
-            dataTable.Columns.Add("Review");
-            dataTable.Columns.Add("isLike", typeof(bool));
-
-            dataTable.Rows.Add(1, 1, 3, "Nice", true);
-            dataTable.Rows.Add(1, 2, 5, "Good", true);
-            dataTable.Rows.Add(2, 1, 1, "Bad", false);
-            dataTable.Rows.Add(4, 3, 3, "Nice", true);
-            dataTable.Rows.Add(3, 4, 2, "Bad", false);
-            dataTable.Rows.Add(5, 1, 5, "Good", true);
-            dataTable.Rows.Add(6, 5, 3, "Nice", true);
-            dataTable.Rows.Add(2, 6, 5, "Good", true);
-            dataTable.Rows.Add(8, 5, 2, "Bad", false);
-            dataTable.Rows.Add(6, 7, 3, "Nice", true);
-            dataTable.Rows.Add(7, 6, 5, "Good", true);
-            dataTable.Rows.Add(9, 9, 3, "Nice", true);
-            dataTable.Rows.Add(10, 8, 4, "Good", true);
-            dataTable.Rows.Add(9, 10, 1, "Bad", false);
-            dataTable.Rows.Add(11, 11, 5, "Good", true);
         }
     }
 }
