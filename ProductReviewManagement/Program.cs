@@ -27,7 +27,7 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=1,UserID=1,Rating=2,Review="Bad",isLike=false},
                 new ProductReview(){ProductID=2,UserID=1,Rating=4,Review="Good",isLike=true},
                 new ProductReview(){ProductID=3,UserID=2,Rating=5,Review="Good",isLike=true},
-                new ProductReview(){ProductID=1,UserID=2,Rating=3,Review="Nice",isLike=true},
+                new ProductReview(){ProductID=1,UserID=2,Rating=5,Review="Good",isLike=true},
                 new ProductReview(){ProductID=2,UserID=3,Rating=2,Review="Nice",isLike=true},
                 new ProductReview(){ProductID=2,UserID=4,Rating=1,Review="Bad",isLike=false},
                 new ProductReview(){ProductID=4,UserID=3,Rating=1,Review="Bad",isLike=false},
@@ -36,15 +36,19 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=4,UserID=1,Rating=4,Review="Good",isLike=true},
                 new ProductReview(){ProductID=5,UserID=2,Rating=3,Review="Nice",isLike=true}
             };
-            /// Iterating the list and printing product ratings.
+            /// UC1 Iterating the list and printing product ratings.
             foreach (var list in productReviewList)
             {
                 Console.WriteLine("ProductId: " + list.ProductID + " UserId: " + list.UserID + " Rating: " + list.Rating +
                     " Review: " + list.Review + " IsLike: " + list.isLike);
             }
+            /// UC2
             Console.WriteLine("\n Top 3 rated products.");
             ProductReviewManagement product = new ProductReviewManagement();
             product.TopRecords(productReviewList);
+            /// UC3
+            Console.WriteLine("\n Ratings greater than three of specific products: ");
+            product.RatingsGreaterThanThreeOfSpecificProducts(productReviewList);
         }
     }
 }
