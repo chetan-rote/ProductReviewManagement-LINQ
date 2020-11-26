@@ -77,6 +77,10 @@ namespace ProductReviewManagement
             /// UC11
             Console.WriteLine("\nRecords with Nice Reviews");
             product.GetProductWithReviewNice();
+
+            /// UC12
+            Console.WriteLine("\nRecords of UserId 10:-");
+            product.GetRecordsWithUserId();
         }
     }
 }
