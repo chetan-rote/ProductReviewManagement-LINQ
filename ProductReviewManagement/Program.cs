@@ -49,10 +49,12 @@ namespace ProductReviewManagement
             /// UC3
             Console.WriteLine("\n Ratings greater than three of specific products: ");
             product.RatingsGreaterThanThreeOfSpecificProducts(productReviewList);
-
-            // UC4
+            /// UC4
             Console.WriteLine("\n Review count for each product Id.");
             product.GetReviewsCount(productReviewList);
+            /// UC5
+            Console.WriteLine("\nProduct Id and reviews from the list.");
+            product.GetProductIdAndReview(productReviewList);
         }
     }
 }
