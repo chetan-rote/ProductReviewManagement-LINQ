@@ -39,7 +39,7 @@ namespace ProductReviewManagement
             }
         }
         /// <summary>
-        /// UC4 Gets review count for each product id.
+        /// UC4 Gets review count for each ProductId.
         /// </summary>
         /// <param name="listProductReview"></param>
         public void GetReviewsCount(List<ProductReview> listProductReview)
