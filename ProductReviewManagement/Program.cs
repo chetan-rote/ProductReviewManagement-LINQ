@@ -73,6 +73,10 @@ namespace ProductReviewManagement
             /// UC10
             Console.WriteLine("\nAverage Rating for each product.");
             product.GetAverageRating();
+
+            /// UC11
+            Console.WriteLine("\nRecords with Nice Reviews");
+            product.GetProductWithReviewNice();
         }
     }
 }
