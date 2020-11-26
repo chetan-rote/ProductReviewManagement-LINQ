@@ -69,6 +69,10 @@ namespace ProductReviewManagement
             /// UC9
             Console.WriteLine("\nRecords with isLike True: ");
             product.GetRecordsWithIsLikeTrue();
+
+            /// UC10
+            Console.WriteLine("\nAverage Rating for each product.");
+            product.GetAverageRating();
         }
     }
 }

@@ -126,5 +126,18 @@ namespace ProductReviewManagement
                     + "isLike : " + product.Field<bool>("isLike"));
             }
         }
+        /// <summary>
+        /// UC10 Gets the average rating for each product Id.
+        /// </summary>
+        public void GetAverageRating()
+        {
+            var recordedData = dataTable.AsEnumerable().GroupBy(e => e.Field<int>("ProductID")).Select
+                               (x => new { ProductID = x.Key, Average = x.Average(y => y.Field<double>("Rating")) });
+
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + ": " + list.Average);
+            }
+        }
     }
 }
